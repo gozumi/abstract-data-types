@@ -1,28 +1,131 @@
+/* jshint expr: true */
+
 var chai = require('chai');
 var Queue = require('../adt-queue');
 
 chai.should();
 
 describe('adt-queue', function() {
+	var q,
+		a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-	it('should instantiate an empty queue');
-
-	it('should not be empty when an item is added');
-
-	it('should be empty when all the items in the queue have been dequeued');
-
-	it('should return the correct front item of the queue');
-
-	it ('should return the correct number of items in the queue');
+	beforeEach(function () {
+		q = new Queue();
+	});
 
 
-	describe("edge conditions", function() {
-		// The philosphy used with edge conditions is to return 'undefined'
-		// where this makes sense and raise an error in other cases
+	describe('in normal conditions', function () {
+		
+		it('should instantiate an empty queue', function() {
 
-		it('should return "undefined" if front() is called on an empty queue');
+			q.isEmpty().should.be.true;
 
-		it('should return "undefined" if dequeue is called on an empty queue');
+		});
+
+
+		it('should not be empty when an item is enqueued', function() {
+
+			q.enqueue({some:'object'});
+			q.isEmpty().should.be.false;
+
+		});
+
+
+		it('should be empty when an item is enqueued and then dequeued', function() {
+
+			q.enqueue({some:'object'});
+
+			q.dequeue();
+
+			q.isEmpty().should.be.true;
+
+		});
+
+
+
+		it('should return the correct item when dequeued', function() {
+
+			for (var i = 0; i < a.length; i++) {
+				q.enqueue(a[i]);
+			}
+
+			for (i = 0; i < a.length; i++) {
+				q.dequeue().should.equal(a[i]);
+			}
+
+
+		});
+
+
+		it('should be empty when all the items in the queue have been dequeued', function() {
+
+			q.isEmpty().should.be.true;
+
+			for (var i = 0; i < a.length; i++) {
+				q.enqueue(a[i]);
+			}
+
+			q.isEmpty().should.be.false;
+
+			for (i = 0; i < a.length; i++) {
+				q.dequeue();
+			}
+
+			q.isEmpty().should.be.true;
+
+		});
+
+
+		it('should return the correct front item of the queue', function() {
+
+			for (var i = 0; i < a.length; i++) {
+				q.enqueue(a[i]);
+			}
+
+			for (i = 0; i < a.length; i++) {
+				q.front().should.equal(a[i]);
+				q.dequeue();
+			}
+
+		});
+
+
+		it('should return the correct number of items in the queue', function() {
+
+			for (var i = 0; i < a.length; i++) {
+				q.enqueue(a[i]);
+			}
+
+			q.size().should.equal(a.length);
+
+		});
+
+	
+	});
+
+
+	describe("in edge conditions", function() {
+
+		it('should throw an error if dequeue is called on an empty queue', function() {
+
+			q.isEmpty().should.be.true;
+
+			(function(){
+				q.dequeue();	
+			}).should.throw(Error);
+
+		});
+
+
+		it('should throw an error if front() is called on an empty queue', function() {
+
+			q.isEmpty().should.be.true;
+
+			(function(){
+				q.front();	
+			}).should.throw(Error);
+
+		});
 
 	});
 
