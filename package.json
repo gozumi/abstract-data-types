@@ -31,7 +31,7 @@
     "test": "mocha --reporter spec",
     "debug": "node debug ./app",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec",
-    "benchmark": "<--------------- ADD THIS ----------------->"
+    "benchmark": "node_modules/matcha/bin/matcha"
   },
   "engines": {
   	"node": "*",
