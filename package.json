@@ -8,7 +8,7 @@
     "type",
     "queue"
   ],
-  "homepage": "http://adt.gozumi.com/queue",
+  "homepage": "https://github.com/gozumi/adt-queue",
   "bugs": {
     "url": "https://github.com/gozumi/adt-queue/issues"
   },
@@ -30,7 +30,7 @@
   "scripts": {
     "test": "mocha --reporter spec",
     "debug": "node debug ./app",
-    "cover": "<--------------- ADD THIS ----------------->",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec",
     "benchmark": "<--------------- ADD THIS ----------------->"
   },
   "engines": {
@@ -40,6 +40,8 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "istanbul": "*",
+    "matcha": "*"
   }
 }
