@@ -1,7 +1,7 @@
 {
   "name": "adt-queue",
   "version": "0.1.0",
-  "description": "This class implements an ADT (abstaract data type) queue.",
+  "description": "This module implements the abstract data type Queue. All the standard Queue operations have been implemented (create, enqueue, dequeue, front & isEmpty).",
   "keywords": [
     "abstract",
     "data",
