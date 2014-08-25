@@ -2,23 +2,30 @@ var Queue = require('../adt-queue');
 
 suite('adt-queue', function() {
 
-	var q = new Queue(),
-		iterations = 1000;
 
 	bench('1000 Enqueue opertions', function() {
 
-		for (var i = 0; i < iterations; i++) {
+		var q = new Queue();
+
+		for (var i = 0; i < 1000; i++) {
 			q.enqueue(i);
 		}
 
 	});
 
-	bench('1000 dequeues opertions', function() {
+	bench('1000 enqueues and 1000 dequeues opertions', function() {
 
-		for (var i = 0; i < iterations; i++) {
+		var q = new Queue();
+
+		for (var i = 0; i < 1000; i++) {
+			q.enqueue(i);
+		}
+
+		for (i = 0; i < 1000; i++) {
 			q.dequeue();
 		}
 
 	});
+
 
 });
