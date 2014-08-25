@@ -1,11 +1,11 @@
-<img src="logo.png" alt="Gozumi abstact data types" align="right">
+<img src="logo.png" alt="Gozumi abstract data types" align="right">
 
 adt-queue
 =========
 
-This module implememnts the abstract data type Queue. All the standard Queue operations have been implemented. These are:
+This module implements the abstract data type _Queue_. All the standard Queue operations have been implemented. These are:
 
-- __create__	instatiates an empty queue
+- __create__	instantiates an empty queue
 - __enqueue__	adds a new item to the back of the queue
 - __dequeue__	returns the item at the front of the queue and removes it from the queue
 - __front__		returns the item at the front of the queue
@@ -30,7 +30,7 @@ The constructor can be added to your code using the require statement.
 Create
 ------
 
-To create an empty queue simply instanitate and _adt-queue_ object.
+To create an empty queue simply instantiates and _adt-queue_ object.
 
 	var q = new Queue();
 
