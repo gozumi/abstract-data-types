@@ -38,7 +38,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "1.21.4",
+    "mocha": "1.21.x",
     "chai": "1.9.x",
     "istanbul": "0.3.x",
     "matcha": "0.5.x"
