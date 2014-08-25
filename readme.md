@@ -17,7 +17,7 @@ Installation
 
 $ npm install adt-queue
 
-Getting Satarted
+Getting Started
 ================
 
 The constructor can be added to your code using the require statement.
@@ -46,11 +46,11 @@ The _enqueue_ operation adds a new item to the back of the queue. To do this cal
 Dequeue
 -------
 
-The _dequeue_ method returns the item at the front of the queue and removes that item fromt the queue. To do this call _dequeue_ on a queue object.
+The _dequeue_ method returns the item at the front of the queue and removes that item from the queue. To do this call _dequeue_ on a queue object.
 
 	var frontItem = q.dequeue();
 
-If _dequeue_ is called on n empty queue, the following error is thrown.
+If _dequeue_ is called on an empty queue, the following error is thrown.
 
 	new Error('adt-queue.dequeue(): Tried to dequeue an empty queue!');
 
