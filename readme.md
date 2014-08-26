@@ -3,7 +3,7 @@
 abstract-data-types
 ===================
 
-The future of this module is that it will be able to erturn a constructor for each of the following abstract data types:
+The future of this module is that it will be able to return instances of the following abstract data types:
 
 - __Queue__ _This is currently implemented_
 - __Linked List__
@@ -59,17 +59,6 @@ This module implements the abstract data type _Queue_. All the standard Queue op
 - __isEmpty__	determines whether the queue is empty and returns true if it is and false otherwise
 
 
-
-
-
-
-
-Create
-------
-
-To create an empty queue simply instantiates and _adt-queue_ object.
-
-	var q = new Queue();
 
 
 Enqueue
