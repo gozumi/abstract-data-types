@@ -1,6 +1,53 @@
 <img src="logo.png" alt="Gozumi abstract data types" align="right">
 
-adt-queue
+abstract-data-types
+===================
+
+The future of this module is that it will be able to erturn a constructor for each of the following abstract data types:
+
+- __Queue__ _This is currently implemented
+- __Linked List__
+- __Stack__
+- __Binary Tree__
+- __Binary Search Tree__
+- __Graph__
+- __Hash Table__
+- __Heap__
+
+
+Installation
+============
+
+	$ npm install abstract-data-types
+
+
+Getting Started
+================
+
+The individual abstract data types are instantiated from constructors that exist as properties of the _abstract-data-types_ module. The module can be accessed as follows.
+
+	var adt = require('abstract-data-types');
+
+
+You can instantiate individual abstract data types like this.
+
+	var q   = adt.CreateQueue();			// _To create an empty Queue_
+	var ll  = adt.CreateLinkedList();		// _To create an empty Linked List_
+	var s   = adt.CreateStack();			// _To create an empty Stack_
+	var bt  = adt.CreateBinaryTree();		// _To create an empty Queue_
+	var bst = adt.CreateBinarySearchTree();	// _To create an empty Binary Search Tree_
+	var g   = adt.CreateGraph();			// _To create an empty Queue_
+	var ht  = adt.CreateHashTable();		// _To create an empty Queue_
+	var h   = adt.CreateHeap();				// _To create an empty Queue_
+
+
+
+The rest of this document explains each of the operations that can be performed these abstract data type instances.
+
+
+
+
+Queue
 =========
 
 This module implements the abstract data type _Queue_. All the standard Queue operations have been implemented. These are:
@@ -12,17 +59,7 @@ This module implements the abstract data type _Queue_. All the standard Queue op
 - __isEmpty__	determines whether the queue is empty and returns true if it is and false otherwise
 
 
-Installation
-============
 
-$ npm install adt-queue
-
-Getting Started
-================
-
-The constructor can be added to your code using the require statement.
-
-	var Queue = require('adt-queue');
 
 
 
