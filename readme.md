@@ -5,7 +5,7 @@ abstract-data-types
 
 The future of this module is that it will be able to erturn a constructor for each of the following abstract data types:
 
-- __Queue__ _This is currently implemented
+- __Queue__ _This is currently implemented_
 - __Linked List__
 - __Stack__
 - __Binary Tree__
