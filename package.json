@@ -18,7 +18,7 @@
     "email": "ian@gozumi.com",
     "url": "http://twitter.com/gozumi"
   },
-  "main": "adt-queue.js",
+  "main": "index.js",
   "directories": {
     "test": "./test",
     "example": "./example"
@@ -31,6 +31,9 @@
     "test": "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec",
     "benchmark": "node_modules/matcha/bin/matcha"
+  },
+  "directories": {
+    "lib": "./lib"
   },
   "engines": {
     "node": "*",

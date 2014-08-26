@@ -1,7 +1,7 @@
 /* jshint expr: true */
 
 var chai = require('chai');
-var Queue = require('../adt-queue');
+var adt = require('../index');
 
 chai.should();
 
@@ -10,7 +10,7 @@ describe('adt-queue', function() {
 		a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 	beforeEach(function () {
-		q = new Queue();
+		q = adt.createQueue();
 	});
 
 
