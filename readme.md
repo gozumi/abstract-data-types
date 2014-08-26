@@ -52,7 +52,6 @@ Queue
 
 This module implements the abstract data type _Queue_. All the standard Queue operations have been implemented. These are:
 
-- __create__	instantiates an empty queue _handled by adt.CreateQueue()_
 - __enqueue__	adds a new item to the back of the queue
 - __dequeue__	returns the item at the front of the queue and removes it from the queue
 - __front__		returns the item at the front of the queue
