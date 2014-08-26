@@ -1,12 +1,14 @@
 {
   "name": "abstract-data-types",
-  "version": "0.1.0",
-  "description": "This module implements the abstract data type Queue. All the standard Queue operations have been implemented (create, enqueue, dequeue, front & isEmpty).",
+  "version": "0.1.1",
+  "description": "This module aims to provide a full suite of abstract data types. At present it provides the abstract data type Queue.",
   "keywords": [
     "abstract",
     "data",
     "type",
-    "queue"
+    "queue",
+    "adt",
+    "abstract data type"
   ],
   "homepage": "https://github.com/gozumi/adt-queue",
   "bugs": {
