@@ -13,7 +13,9 @@ exports.createQueue = function() {
 
 exports.createLinkedList = function() {
 
-	// TODO: This functionality has yet to be implemented
+	var LinkedList = require('./lib/adt-linked-list');
+
+	return new LinkedList();
 
 };
 
