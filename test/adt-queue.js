@@ -100,6 +100,21 @@ describe('adt-queue', function() {
 
 		});
 
+
+		describe('toString()', function () {
+			
+			it('should return the correct string repesentation of the queue', function() {
+
+				for (var i = 0; i < a.length; i++) {
+					q.enqueue(a[i]);
+				}
+
+				q.toString().should.equal(a.toString());
+
+			});
+
+		});
+
 	
 	});
 
