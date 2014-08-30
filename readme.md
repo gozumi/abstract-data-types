@@ -112,3 +112,7 @@ The _Linked List_ implements all of the standard Linked List functions. These ar
 #### Add
 
 The add method takes the item to be added to the list and the position that the item should be added in. If the position is less than or equal to 0, the item is added to the front of the list. If the position is greater than or equal to the size of the list, the item is added to the end of the list.
+
+	ll.add(_position_, item);
+
+
