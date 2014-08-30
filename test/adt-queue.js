@@ -101,6 +101,15 @@ describe('adt-queue', function() {
 		});
 
 
+		it('should be possible to chain enqueue operations', function () {
+			
+			q.enqueue({item1: 1}).enqueue({item2: 2});
+
+			q.size().should.equal(2);
+
+		});
+
+
 		describe('toString()', function () {
 			
 			it('should return the correct string repesentation of the queue', function() {
