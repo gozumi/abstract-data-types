@@ -31,14 +31,14 @@ The individual abstract data types are instantiated from constructors that exist
 
 You can instantiate individual abstract data types like this.
 
-	var q   = adt.CreateQueue();			// To create an empty Queue
-	var ll  = adt.CreateLinkedList();		// To create an empty Linked List
-	var s   = adt.CreateStack();			// To create an empty Stack
-	var bt  = adt.CreateBinaryTree();		// To create an empty Queue
-	var bst = adt.CreateBinarySearchTree();	// To create an empty Binary Search Tree
-	var g   = adt.CreateGraph();			// To create an empty Queue
-	var ht  = adt.CreateHashTable();		// To create an empty Queue
-	var h   = adt.CreateHeap();				// To create an empty Queue
+	var q   = adt.createQueue();			// To create an empty Queue
+	var ll  = adt.createLinkedList();		// To create an empty Linked List
+	var s   = adt.createStack();			// To create an empty Stack
+	var bt  = adt.createBinaryTree();		// To create an empty Queue
+	var bst = adt.createBinarySearchTree();	// To create an empty Binary Search Tree
+	var g   = adt.createGraph();			// To create an empty Queue
+	var ht  = adt.createHashTable();		// To create an empty Queue
+	var h   = adt.createHeap();				// To create an empty Queue
 
 
 
