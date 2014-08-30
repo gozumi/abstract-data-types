@@ -50,7 +50,7 @@ The rest of this document explains each of the operations that can be performed 
 Queue
 -----
 
-This module implements the abstract data type _Queue_. All the standard Queue operations have been implemented. These are:
+This _Queue_ is implements all the standard Queue operations. These are:
 
 - __enqueue__	adds a new item to the back of the queue
 - __dequeue__	returns the item at the front of the queue and removes it from the queue
@@ -96,3 +96,19 @@ The _isEmpty_ method is a boolean function that, when called on a queue, returns
 
 	q.isEmpty();
 
+
+Linked List
+-----------
+
+The _Linked List_ implements all of the standard Linked List functions. These are given below:
+
+- __add__		adds a new item to the list at a specific position
+- __remove__	removes an item from the list at a specific position
+- __get__		returns the item at at a specific position in the list
+-__size__		returns the number of items in the List
+- __isEmpty__	determines whether the List is empty and returns true if it is and false otherwise
+
+
+#### Add
+
+The add method takes the item to be added to the list and the position that the item should be added in. If the position is less than or equal to 0, the item is added to the front of the list. If the position is greater than or equal to the size of the list, the item is added to the end of the list.
