@@ -108,11 +108,36 @@ The _Linked List_ implements all of the standard Linked List functions. These ar
 -__size__		returns the number of items in the List
 - __isEmpty__	determines whether the List is empty and returns true if it is and false otherwise
 
+The postion index starts from 0.
+
 
 #### Add
 
 The add method takes the item to be added to the list and the position that the item should be added in. If the position is less than or equal to 0, the item is added to the front of the list. If the position is greater than or equal to the size of the list, the item is added to the end of the list.
 
-	ll.add(_position_, item);
+	ll.add(position, item);
+
+
+
+#### Remove
+
+The remove method removes the item at a specific position in the list. If the position requested is less than 0 or geater then or equal to the length of the list, an error is thrown.
+
+	ll.remove(position);
+
+
+#### Get
+
+The get method returns the item at a specific position in the list. If the position requested is less than 0 or geater then or equal to the length of the list, an error is thrown.
+
+	ll.get(position);
+
+
+#### IsEmpty
+
+The _isEmpty_ method is a boolean function that, when called on a list, returns _true_ if the list is empty and false otherwise.
+
+	ll.isEmpty();
+
 
 
