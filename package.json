@@ -1,6 +1,6 @@
 {
   "name": "abstract-data-types",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This module aims to provide a full suite of abstract data types. At present it provides the abstract data type Queue.",
   "keywords": [
     "abstract",
@@ -8,7 +8,10 @@
     "type",
     "queue",
     "adt",
-    "abstract data type"
+    "abstract data type",
+    "link list",
+    "linked",
+    "list"
   ],
   "homepage": "https://github.com/gozumi/adt-queue",
   "bugs": {
