@@ -6,7 +6,7 @@ abstract-data-types
 The future of this module is that it will be able to return instances of the following abstract data types:
 
 - __Queue__ _This is currently implemented_
-- __Linked List__
+- __Linked List__ _This is currently implemented_
 - __Stack__
 - __Binary Tree__
 - __Binary Search Tree__
