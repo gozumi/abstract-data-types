@@ -105,7 +105,7 @@ The _Linked List_ implements all of the standard Linked List functions. These ar
 - __add__		adds a new item to the list at a specific position
 - __remove__	removes an item from the list at a specific position
 - __get__		returns the item at at a specific position in the list
--__size__		returns the number of items in the List
+- __size__		returns the number of items in the List
 - __isEmpty__	determines whether the List is empty and returns true if it is and false otherwise
 
 The postion index starts from 0.
@@ -137,7 +137,7 @@ The get method returns the item at a specific position in the list. If the posit
 
 The size method returns the number of items in the list.
 
-	ll.size;
+	ll.size();
 
 
 #### IsEmpty
@@ -186,7 +186,7 @@ The pop method returns the item at the top of the stack and leaves it on the sta
 
 The size method returns the number of items in the stack.
 
-	s.size;
+	s.size();
 
 
 #### IsEmpty
