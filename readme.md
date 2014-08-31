@@ -34,11 +34,11 @@ You can instantiate individual abstract data types like this.
 	var q   = adt.createQueue();            // To create an empty Queue
 	var ll  = adt.createLinkedList();       // To create an empty Linked List
 	var s   = adt.createStack();            // To create an empty Stack
-	var bt  = adt.createBinaryTree();       // To create an empty Queue
+	var bt  = adt.createBinaryTree();       // To create an empty Binary Tree
 	var bst = adt.createBinarySearchTree(); // To create an empty Binary Search Tree
-	var g   = adt.createGraph();            // To create an empty Queue
-	var ht  = adt.createHashTable();        // To create an empty Queue
-	var h   = adt.createHeap();             // To create an empty Queue
+	var g   = adt.createGraph();            // To create an empty Graph
+	var ht  = adt.createHashTable();        // To create an empty Hash Table
+	var h   = adt.createHeap();             // To create an empty Heap
 
 
 
