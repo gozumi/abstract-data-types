@@ -29,7 +29,9 @@ exports.createStack = function() {
 
 exports.createBinaryTree = function() {
 
-	// TODO: This functionality has yet to be implemented
+	var BinaryTree = require('./lib/adt-binary-tree');
+
+	return BinaryTree();
 
 };
 
