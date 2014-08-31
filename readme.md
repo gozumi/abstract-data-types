@@ -55,6 +55,7 @@ This _Queue_ is implements all the standard Queue operations. These are:
 - __enqueue__	adds a new item to the back of the queue
 - __dequeue__	returns the item at the front of the queue and removes it from the queue
 - __front__		returns the item at the front of the queue
+- __size__		returns the number of items in the queue
 - __isEmpty__	determines whether the queue is empty and returns true if it is and false otherwise
 
 
@@ -155,7 +156,7 @@ The _Stack_ implements all of the standard Stack functions. These are given belo
 - __push__		adds a new item to the top of the stack
 - __pop__		returns the item at the top of the stack and removes it from the stack
 - __top__		returns the item at the top of the stack and leaves it on the stack
--__size__		returns the number of items in the stack
+- __size__		returns the number of items in the stack
 - __isEmpty__	determines whether the stack is empty and returns true if it is and false otherwise
 
 
