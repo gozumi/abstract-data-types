@@ -21,7 +21,9 @@ exports.createLinkedList = function() {
 
 exports.createStack = function() {
 
-	// TODO: This functionality has yet to be implemented
+	var Stack = require('./lib/adt-stack');
+
+	return new Stack();
 
 };
 

@@ -7,7 +7,7 @@ The future of this module is that it will be able to return instances of the fol
 
 - __Queue__ _This is currently implemented_
 - __Linked List__ _This is currently implemented_
-- __Stack__
+- __Stack__ _This is currently implemented_
 - __Binary Tree__
 - __Binary Search Tree__
 - __Graph__
@@ -31,14 +31,14 @@ The individual abstract data types are instantiated from constructors that exist
 
 You can instantiate individual abstract data types like this.
 
-	var q   = adt.createQueue();			// To create an empty Queue
-	var ll  = adt.createLinkedList();		// To create an empty Linked List
-	var s   = adt.createStack();			// To create an empty Stack
-	var bt  = adt.createBinaryTree();		// To create an empty Queue
-	var bst = adt.createBinarySearchTree();	// To create an empty Binary Search Tree
-	var g   = adt.createGraph();			// To create an empty Queue
-	var ht  = adt.createHashTable();		// To create an empty Queue
-	var h   = adt.createHeap();				// To create an empty Queue
+	var q   = adt.createQueue();            // To create an empty Queue
+	var ll  = adt.createLinkedList();       // To create an empty Linked List
+	var s   = adt.createStack();            // To create an empty Stack
+	var bt  = adt.createBinaryTree();       // To create an empty Queue
+	var bst = adt.createBinarySearchTree(); // To create an empty Binary Search Tree
+	var g   = adt.createGraph();            // To create an empty Queue
+	var ht  = adt.createHashTable();        // To create an empty Queue
+	var h   = adt.createHeap();             // To create an empty Queue
 
 
 
@@ -133,11 +133,67 @@ The get method returns the item at a specific position in the list. If the posit
 	ll.get(position);
 
 
+#### Size
+
+The size method returns the number of items in the list.
+
+	ll.size;
+
+
 #### IsEmpty
 
 The _isEmpty_ method is a boolean function that, when called on a list, returns _true_ if the list is empty and false otherwise.
 
 	ll.isEmpty();
+
+
+Stack
+-----
+
+The _Stack_ implements all of the standard Stack functions. These are given below:
+
+- __push__		adds a new item to the top of the stack
+- __pop__		returns the item at the top of the stack and removes it from the stack
+- __top__		returns the item at the top of the stack and leaves it on the stack
+-__size__		returns the number of items in the stack
+- __isEmpty__	determines whether the stack is empty and returns true if it is and false otherwise
+
+
+
+#### Push
+
+The push method adds a new item to the top of the stack. It also returns the stack so that push opertations can be chained.
+
+	s.push(item);
+
+
+
+#### Pop
+
+The pop method returns the item at the top of the stack and removed it from the stack.
+
+	s.pop();
+
+
+#### Top
+
+The pop method returns the item at the top of the stack and leaves it on the stack.
+
+	s.top();
+
+
+#### Size
+
+The size method returns the number of items in the stack.
+
+	s.size;
+
+
+#### IsEmpty
+
+The _isEmpty_ method is a boolean function that, when called on a stack, returns _true_ if the stack is empty and false otherwise.
+
+	s.isEmpty();
 
 
 
