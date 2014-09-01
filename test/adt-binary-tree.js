@@ -12,26 +12,49 @@ describe.only('adt-binary-tree', function () {
 	var bt;
 
 	beforeEach(function () {
-		bt = adt.creatBinaryTree();		
+		bt = adt.createBinaryTree();		
 	});
 
 
-	it('should instantiate an empty tree');
+	it('should instantiate an empty tree', function() {
+
+		bt.isEmpty().should.be.true;
+
+	});
 
 
-	it('should instantiate a one node tree');
+	it('should instantiate a one node tree', function() {
 
+		var item = {item: 1};
+			btWithItem = adt.createBinaryTree(item);
 
-	it('should instantiate a complete tree');
+		btWithItem.getRootItem().should.deep.equal(item);
+		btWithItem.getLeftTree().isEmpty().should.be.true;
+		btWithItem.getRightTree().isEmpty().should.be.true;
+
+	});
 
 
 	describe('getRootItem()', function () {
 
 
-		it('should return the item at the root of the tree');
+		it('should return the item at the root of the tree', function() {
+
+			var rootItem = {root: 'item'};
+			bt.setRootItem(rootItem);
+
+			bt.getRootItem().should.deep.equal(rootItem);
+
+		});
 
 
-		it('should throw an error if the tree is empty');
+		it('should throw an error if the tree is empty', function() {
+
+			(function() {
+				bt.getRootItem();
+			}).should.throw(Error);
+
+		});
 
 		
 	});
@@ -40,7 +63,21 @@ describe.only('adt-binary-tree', function () {
 	describe('getLeftTree()', function () {
 
 
-		it('should return the left sub tree');
+		it('should return the left sub tree', function() {
+
+			var rootItem = {root: 'item'};
+			bt.setRootItem(rootItem);
+
+			var btLeft = new adt.createBinaryTree({left: 'left'});
+			bt.attachLeft(btLeft);
+
+			bt.getLeftTree().should.deep.equal(rootItem);
+
+
+		});
+
+
+		it('should throw an error if the tree is empty');
 
 		
 	});
@@ -50,6 +87,9 @@ describe.only('adt-binary-tree', function () {
 
 
 		it('should return the right sub tree');
+
+
+		it('should throw an error if the tree is empty');
 
 		
 	});
