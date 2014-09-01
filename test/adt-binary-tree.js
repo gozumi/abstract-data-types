@@ -68,11 +68,15 @@ describe.only('adt-binary-tree', function () {
 			var rootItem = {root: 'item'};
 			bt.setRootItem(rootItem);
 
-			var btLeft = new adt.createBinaryTree({left: 'left'});
+			var rootItemLeft = {left: 'left'};
+				btLeft = new adt.createBinaryTree(rootItemLeft);
+			
 			bt.attachLeft(btLeft);
 
-			bt.getLeftTree().should.deep.equal(rootItem);
+			bt.getLeftTree()._id.should.equal(btLeft._id);
 
+			console.log(bt.getLeftTree()._id);
+			console.log(btLeft._id);
 
 		});
 
