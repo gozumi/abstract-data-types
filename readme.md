@@ -24,12 +24,12 @@ Installation
 Getting Started
 ================
 
-The individual abstract data types are instantiated from constructors that exist as properties of the _abstract-data-types_ module. The module can be accessed as follows.
+The individual abstract data types are instantiated from factory functions that exist as properties of the _abstract-data-types_ module. The module can be accessed as follows.
 
 	var adt = require('abstract-data-types');
 
 
-You can instantiate individual abstract data types like this.
+The individual factory functions can be used to create instances of the abstract data types like this.
 
 	var q   = adt.createQueue();            // To create an empty Queue
 	var ll  = adt.createLinkedList();       // To create an empty Linked List
@@ -195,6 +195,144 @@ The size method returns the number of items in the stack.
 The _isEmpty_ method is a boolean function that, when called on a stack, returns _true_ if the stack is empty and false otherwise.
 
 	s.isEmpty();
+
+
+
+Binary Tree
+-----------
+
+The _Binary Tree_ in this module implements the standard methods of the Binary Tree abstract data type. These methods are:
+
+- __isEmpty__       determines whether the tree is empty and returns true if it is and false otherwise
+- __getRootItem__   returns the item at the root of the tree
+- __setRootItem__   updates the item at the root of the tree
+- __getLeftTree__   returns the left sub tree
+- __getRightTree__  returns the Right sub tree
+-__attachLeft__     attaches at tree or an item as the left sub tree
+-__attachRight__    attaches at tree or an item as the right sub tree
+-__detachLeft__     removes the left sub tree
+-__detachRight__    removes the right sub tree
+
+
+#### Creation
+
+The factory function used to create a new _Binary Tree_ can be called in the following 2 ways:
+
+- __By passing in no arguments__ - this will create an empty tree.
+	
+	var bt = adt.createBinaryTree();
+
+- __By passing in and item__ - this will create a single node tree with the item at the root.
+
+	var bt = adt.createBinaryTree(item);
+
+
+#### Is Empty
+
+The _isEmpty_ method is a boolean function that, when called on a tree, returns _true_ if the tree is empty and false otherwise.
+
+	bt.isEmpty();
+
+
+#### Get Root Item
+
+This method returns the item at the root of the tree and is called as follows.
+
+	bt.getRootItem();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.getRootItem(): Tried to get the root item of an empty tree');
+	
+
+
+#### Set Root Item
+
+This method puts an item at the root of the tree and is called as follows.
+
+	bt.setRootItem(item);
+
+
+#### Get Left Tree
+
+This method returns the left sub tree.
+
+	bt.getLeftTree();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.getLeftTree(): Tried to get the left tree of an empty tree');
+
+
+	
+#### Get Right Tree
+
+This method returns the right sub tree.
+
+	bt.getRightTree();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.getLeftTree(): Tried to get the left tree of an empty tree');
+
+	
+#### Attach Left Tree
+
+This method can be called by either passing in another _Binary Tree_, or by passing in an item that is not a _Binary Tree_. 
+
+If a _Binary Tree_ is passed in, that tree will be attached as the left sub tree. The method is called like this.
+
+	bt.attachLeft( tree );
+
+If a non _Binary Tree_ item is passed in, a new single node tree is created out of that item and this new tree is attached as the left sub tree.
+
+	bt.attachLeft( item );
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.attachLeft(): Attempt to attach a left sub tree to an empty tree');	
+
+
+
+#### Attach Right Tree
+
+This method can be called by either passing in another _Binary Tree_, or by passing in an item that is not a _Binary Tree_. 
+
+If a _Binary Tree_ is passed in, that tree will be attached as the right sub tree. The method is called like this.
+
+	bt.attachRight( tree );
+
+If a non _Binary Tree_ item is passed in, a new single node tree is created out of that item and this new tree is attached as the right sub tree.
+
+	bt.attachRight( item );
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.attachRight(): Attempt to attach a right sub tree to an empty tree');	
+
+
+
+#### Detach Left Tree
+
+This method is used to remove the left sub tree from the main tree. It also returns the tree that it detaches. it is called as follows.
+
+	bt.detachLeft();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.detachLeft(): Attempt to detach the left sub tree of an empty tree');	
+
+
+#### Detach Right Tree
+
+This method is used to remove the right sub tree from the main tree. It also returns the tree that it detaches. it is called as follows.
+
+	bt.detachRight();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-tree.detachRight(): Attempt to detach the right sub tree of an empty tree');	
+
 
 
 
