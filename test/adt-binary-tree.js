@@ -6,7 +6,7 @@ var adt = require('../index'),
 chai.should();
 
 
-describe.only('adt-binary-tree', function () {
+describe('adt-binary-tree', function () {
 	
 	
 	var bt;
@@ -204,20 +204,14 @@ describe.only('adt-binary-tree', function () {
 	describe('attachLeft()', function () {
 
 
-		it('should throw an error if the item passed is not a tree', function () {
-
-			var rootItem = {root: 'item'};
-			bt.setRootItem(rootItem);
-
-			(function() {
-				bt.attachLeft({});
-			}).should.throw(Error);
-
+		beforeEach(function () {		
+			bt = adt.createBinaryTree({root: 'item'});
 		});
 
 
 		it('should throw an error if the tree is empty', function() {
 
+			bt = adt.createBinaryTree(); // make sure bt is empty
 			(function() {
 				var rootItemLeft = {left: 'left'},
 					btLeft = new adt.createBinaryTree(rootItemLeft);
@@ -233,24 +227,42 @@ describe.only('adt-binary-tree', function () {
 
 			it('should add the item to the tree as a single node left sub tree', function() {
 
+				var rootItemLeft = {left: 'left'},
+					btLeft = new adt.createBinaryTree(rootItemLeft);
+
+				bt.attachLeft(btLeft);
 
 
+				var newRootItemLeft = {newLeft: 'new left'};
+				bt.attachLeft(newRootItemLeft);
+
+
+
+				bt.getLeftTree().getRootItem().should.equal(newRootItemLeft);
 			});
-
-
-			it('should replace the original left sub tree');
 
 
 		});
 
 
 		describe('when given an ADT_Binary_Tree', function () {
-			
-
-			it('should add the given tree to the tree as a the left sub tree');
 
 
-			it('should replace the original left sub tree');
+			it('should replace the original left sub tree', function() {
+
+				var rootItemLeft = {left: 'left'},
+					btLeft = new adt.createBinaryTree(rootItemLeft);
+
+				bt.attachLeft(btLeft);
+
+				var newRootItemLeft = {newLeft: 'new left'},
+					btNewLeft = new adt.createBinaryTree(newRootItemLeft);
+
+				bt.attachLeft(btNewLeft);
+
+				bt.getLeftTree().getRootItem().should.equal(newRootItemLeft);
+
+			});
 
 
 		});
@@ -262,20 +274,14 @@ describe.only('adt-binary-tree', function () {
 	describe('attachRight()', function () {
 
 
-		it('should throw an error if the item passed is not a tree', function () {
-
-			var rootItem = {root: 'item'};
-			bt.setRootItem(rootItem);
-
-			(function() {
-				bt.attachRight({});
-			}).should.throw(Error);
-
+		beforeEach(function () {		
+			bt = adt.createBinaryTree({root: 'item'});
 		});
 
 
 		it('should throw an error if the tree is empty', function() {
 
+			bt = adt.createBinaryTree(); // make sure bt is empty
 			(function() {
 				var rootItemRight = {right: 'right'},
 					btRight = new adt.createBinaryTree(rootItemRight);
@@ -289,22 +295,44 @@ describe.only('adt-binary-tree', function () {
 		describe('when given an item', function () {
 			
 
-			it('should add the item to the tree as a single node right sub tree');
+			it('should add the item to the tree as a single node right sub tree', function() {
+
+				var rootItemRight = {right: 'right'},
+					btRight = new adt.createBinaryTree(rootItemRight);
+
+				bt.attachRight(btRight);
 
 
-			it('should replace the original right sub tree');
+				var newRootItemRight = {newRight: 'new right'};
+				bt.attachRight(newRootItemRight);
+
+
+
+				bt.getRightTree().getRootItem().should.equal(newRootItemRight);
+			});
 
 
 		});
 
 
 		describe('when given an ADT_Binary_Tree', function () {
-			
-
-			it('should add the given tree to the tree as a the right sub tree');
 
 
-			it('should replace the original right sub tree');
+			it('should replace the original right sub tree', function() {
+
+				var rootItemRight = {right: 'right'},
+					btRight = new adt.createBinaryTree(rootItemRight);
+
+				bt.attachRight(btRight);
+
+				var newRootItemRight = {newRight: 'new right'},
+					btNewRight = new adt.createBinaryTree(newRootItemRight);
+
+				bt.attachRight(btNewRight);
+
+				bt.getRightTree().getRootItem().should.equal(newRootItemRight);
+
+			});
 
 
 		});
@@ -316,18 +344,82 @@ describe.only('adt-binary-tree', function () {
 	describe('detachLeft()', function () {
 
 
-		it('should return the left sub tree from the tree and return that sub tree');
+		var rootItemLeft = {left: 'left'},
+			rootItemRight = {right: 'right'};
 
-		
+		beforeEach(function () {
+			bt = adt.createBinaryTree({root: 'item'});
+			bt.attachLeft(rootItemLeft);
+			bt.attachRight(rootItemRight);
+		});
+
+
+		it('should throw an error if the tree is empty', function() {
+
+			bt = adt.createBinaryTree(); // make sure bt is empty
+			(function() {
+				bt.detachLeft();
+			}).should.throw(Error);
+
+		});
+
+
+		it('should return the left sub tree', function() {
+
+
+			bt.detachLeft().getRootItem().should.equal(rootItemLeft);
+
+		});
+
+
+		it('should remove the left sub tree from the tree', function() {
+
+			bt.detachLeft().getLeftTree().isEmpty().should.be.true;
+
+		});
+
+
 	});
 
 
 	describe('detachRight()', function () {
 
 
-		it('should return the right sub tree from the tree and return that sub tree');
+		var rootItemLeft = {left: 'left'},
+			rootItemRight = {right: 'right'};
 
-		
+		beforeEach(function () {
+			bt = adt.createBinaryTree({root: 'item'});
+			bt.attachRight(rootItemRight);
+			bt.attachRight(rootItemRight);
+		});
+
+
+		it('should throw an error if the tree is empty', function() {
+
+			bt = adt.createBinaryTree(); // make sure bt is empty
+			(function() {
+				bt.detachRight();
+			}).should.throw(Error);
+
+		});
+
+
+		it('should return the right sub tree', function() {
+
+
+			bt.detachRight().getRootItem().should.equal(rootItemRight);
+
+		});
+
+
+		it('should remove the right sub tree from the tree', function() {
+
+			bt.detachRight().getRightTree().isEmpty().should.be.true;
+
+		});
+
+
 	});
 
 
