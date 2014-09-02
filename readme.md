@@ -8,7 +8,7 @@ The future of this module is that it will be able to return instances of the fol
 - __Queue__ _This is currently implemented_
 - __Linked List__ _This is currently implemented_
 - __Stack__ _This is currently implemented_
-- __Binary Tree__
+- __Binary Tree__ _This is currently implemented_
 - __Binary Search Tree__
 - __Graph__
 - __Hash Table__
@@ -243,7 +243,7 @@ This method returns the item at the root of the tree and is called as follows.
 If this method is called on an empty tree it throws an error as follows.
 
 	throw new Error('adt-binary-tree.getRootItem(): Tried to get the root item of an empty tree');
-	
+
 
 
 #### Set Root Item
