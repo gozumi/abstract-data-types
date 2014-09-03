@@ -65,7 +65,7 @@ This _Queue_ is implements all the standard Queue operations. These are:
 
 The _enqueue_ operation adds a new item to the back of the queue. To do this call the _enqueue_ method on a Queue instance passing it the data item you wish to add to the Queue.
 
-	q.enqueue({data: 'item'});
+	q.enqueue(item);
 
 
 #### Dequeue
