@@ -48,12 +48,59 @@ describe.only('adt-binary-search-tree', function () {
 	describe('insert()', function () {
 		
 
+		describe('item validation', function () {
+
+
+			it('should add strings to the tree', function() {
+
+				var myString = 'some value';
+				bst.insert(myString);
+
+				bst.getRootItem().should.equal(myString);
+
+			});
+
+
+			it('should add numbers to the tree', function() {
+
+				var myNumber = '5';
+				bst.insert(myNumber);
+
+				bst.getRootItem().should.equal(myNumber);
+
+			});
+
+
+			it('should add objects with a \'key\' propperty', function() {
+
+				var myObject = {my: 'object', key: 1};
+				bst.insert(myObject);
+
+				bst.getRootItem().should.equal(myObject);
+
+			});
+
+
+			it('should throw an error if given an object without a \'key\' property', function() {
+
+				var myObject = {my: 'object'};
+
+				(function() {
+					bst.insert(myObject);
+				}).should.throw(Error);
+
+			});
+
+			
+		});
+
+
 		describe('when the tree is empty', function () {
 
 
 			it('should insert the item at the root of an empty tree', function() {
 
-				var newItem = {new: 'item'};
+				var newItem = 'item';
 				bst.insert(newItem);
 
 				bst.getRootItem().should.equal(newItem);
@@ -64,19 +111,20 @@ describe.only('adt-binary-search-tree', function () {
 		});
 
 
-		describe('when the item already exists in the tree', function () {
-			
-
-			it('should throw an error');
-
-
-		});
-
-
 		describe('when the right sub tree is empty', function () {
-			
-	
-			it('should insert a greater item as the root of the right sub tree');
+
+
+			it('should insert a greater item as the root of the right sub tree', function() {
+
+				var rootItem = 'pear';
+				bst.insert(rootItem);
+
+				var newItem = 'apple';
+				bst.insert(newItem);
+
+				bst.getLeftTree().getRootItem().should.equal(newItem);
+
+			});
 	
 
 		});
@@ -96,6 +144,15 @@ describe.only('adt-binary-search-tree', function () {
 	
 			it('should create a perfectly balanced tree');
 	
+
+		});
+
+
+		describe('when the item already exists in the tree', function () {
+			
+
+			it('should throw an error');
+
 
 		});
 
