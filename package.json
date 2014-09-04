@@ -12,7 +12,12 @@
     "link list",
     "linked",
     "list",
-    "stack"
+    "stack",
+    "binary tree",
+    "binary",
+    "tree",
+    "binary, search tree",
+    "search"
   ],
   "homepage": "https://github.com/gozumi/abstract-data-types",
   "bugs": {
