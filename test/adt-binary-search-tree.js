@@ -338,7 +338,16 @@ describe.only('adt-binary-search-tree', function () {
 			});
 
 
-			it('should throw an error when the item is not at the root');
+			it('should throw an error when the item is not at the root', function() {
+
+				var key = 'orange';
+				bst.insert(key);
+
+				(function() {
+					bst.delete('apple');
+				}).should.throw(Error);
+
+			});
 
 					
 		});
@@ -346,8 +355,21 @@ describe.only('adt-binary-search-tree', function () {
 
 		describe('when the tree has many arbitrary nodes', function () {
 			
+			
+			beforeEach(function () {
+				var data = [8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15];
 
-			it('should remove the item from the tree');
+				for (var i = 0; i < data.length; i++) {
+					bst.insert(data[i]);
+				}
+			});
+
+
+			it('should remove the item from the tree', function() {
+
+				bst.delete(10);
+
+			});
 
 
 			it('should leave the tree as a valid search tree');
