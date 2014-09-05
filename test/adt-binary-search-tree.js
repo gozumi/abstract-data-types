@@ -295,7 +295,16 @@ describe.only('adt-binary-search-tree', function () {
 		describe('when the item already exists in the tree', function () {
 			
 
-			it('should throw an error');
+			it('should throw an error', function() {
+
+				var item = 'value';
+
+				bst.insert(item);
+				(function() {
+					bst.insert(item);
+				}).should.throw(Error);
+
+			});
 
 
 		});
@@ -307,13 +316,26 @@ describe.only('adt-binary-search-tree', function () {
 	describe('delete()', function () {
 		
 
-		it('should thow an error if the tree is empty');
+		it('should thow an error if the tree is empty', function() {
+
+			var key = 'orange';
+			(function() {
+				bst.delete(key);
+			}).should.throw(Error);
+		});
 
 
-		describe('when tree ha a single node', function () {
+		describe('when the tree has a single node', function () {
 
 
-			it('should leave the tree empty when the item is at the root');
+			it('should leave the tree empty when the item is at the root', function() {
+
+				var key = 'orange';
+				bst.insert(key);
+
+				bst.delete(key).isEmpty().should.be.true;
+
+			});
 
 
 			it('should throw an error when the item is not at the root');
