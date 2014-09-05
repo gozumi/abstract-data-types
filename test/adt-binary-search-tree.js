@@ -91,7 +91,20 @@ describe.only('adt-binary-search-tree', function () {
 
 			});
 
-			
+
+			it('should throw an error if the item is an object with a \'key\' property,	and the key property is an object', function() {
+
+
+
+			});
+
+
+			it('should return the correct key if the item is an object with a \'key\' property,	and the key property is not an object');
+
+
+			it('should return the correct key if the item is not an object');
+
+
 		});
 
 
