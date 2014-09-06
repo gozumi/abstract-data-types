@@ -2,7 +2,8 @@
 
 var adt = require('../index'),
 	chai = require('chai'),
-	expect = chai.expect;
+	expect = chai.expect,
+	utils = require('../lib/adt-binary-search-tree/utils');
 
 chai.should();
 
@@ -490,10 +491,27 @@ describe.only('adt-binary-search-tree', function () {
 			});
 
 
-			it('should leave the tree as a valid search tree');
+			it('should leave the tree as a valid search tree', function() {
+
+				utils.isValid(bst).should.be.true;
+
+				bst.delete(16);
+				bst.delete(10);
+				bst.delete(8);
+				bst.delete(24);
+
+				utils.isValid(bst).should.be.true;
+
+			});
 
 
-			it('should throw an error when the item is not at the root');
+			it('should throw an error when the item is not in the tree', function() {
+
+				(function() {
+					bst.delete(parseFloat('27.5'));
+				}).should.throw(Error);
+
+			});
 
 
 		});
@@ -586,5 +604,37 @@ describe.only('adt-binary-search-tree', function () {
 
 	// });
 
+
+	describe('utils', function () {
+
+
+		describe('isValid()', function () {
+
+
+			beforeEach(function () {
+				var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
+
+				for (var i = 0; i < data.length; i++) {
+					bst.insert(data[i]);
+				}
+			});
+
+
+			it('should return true when the tree is valid');
+
+
+			it('should return false when the tree is not valid', function () {
+				
+				// invalidate the tree
+				bst.getRightTree().getLeftTree()._root.setItem(222);
+				
+				utils.isValid().should.be.true;
+
+			});
+
+			
+		});
+		
+	});
 
 });
