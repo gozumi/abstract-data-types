@@ -1,7 +1,8 @@
 /* jshint expr: true */
 
 var adt = require('../index'),
-	chai = require('chai');
+	chai = require('chai'),
+	expect = chai.expect;
 
 chai.should();
 
@@ -95,6 +96,17 @@ describe.only('adt-binary-search-tree', function () {
 			it('should throw an error if the item is an object with a \'key\' property, and the key property is an object', function() {
 
 				var myObject = {my: 'object', key: {the: 'value'}};
+
+				(function() {
+					bst.insert(myObject);
+				}).should.throw(Error);
+
+			});
+
+
+			it('should throw an error if the item is an object with a \'key\' property, and the key property is null', function() {
+
+				var myObject = {my: 'object', key: null};
 
 				(function() {
 					bst.insert(myObject);
@@ -313,6 +325,98 @@ describe.only('adt-binary-search-tree', function () {
 	});
 
 
+	describe('retrieve()', function () {
+		
+
+		describe('when the tree is empty', function () {
+
+
+			it('should return null', function() {
+
+				expect(bst.retrieve(4)).to.be.null;
+
+			});
+
+			
+		});
+
+
+		describe('when tree has a single node', function () {
+
+			var item = {
+					key: 10,
+					data: [1, 2, 3]
+			};
+
+			beforeEach(function () {
+				bst.insert(item);
+			});
+
+
+			it('should return the item when the key is at the root', function() {
+
+				bst.retrieve(10).should.equal(item);
+
+			});
+
+
+			it('should return null when the item is not at the root', function() {
+
+				expect(bst.retrieve(4)).to.be.null;
+
+			});
+
+					
+		});
+
+
+		describe('when the tree has many arbitrary nodes', function () {
+			
+
+			var item22 = {key: 22, data: [1, 2, 3]},
+				item9  = {key: 9, data: [1, 2, 3]},
+				item14 = {key: 14, data: [1, 2, 3]},
+				item11 = {key: 11, data: [1, 2, 3]},
+				item26 = {key: 26, data: [1, 2, 3]},
+				item5  = {key: 5, data: [1, 2, 3]},
+				item30 = {key: 30, data: [1, 2, 3]};
+
+			beforeEach(function () {
+
+				var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, item14, 18, item22, item26, item30, 1, 3, item5, 7, item9, item11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
+
+				for (var i = 0; i < data.length; i++) {
+					bst.insert(data[i]);
+				}
+			});
+
+
+			it('should return the correct item if the key exists', function() {
+
+				bst.retrieve(22).should.equal(item22);
+				bst.retrieve(9).should.equal(item9);
+				bst.retrieve(14).should.equal(item14);
+				bst.retrieve(11).should.equal(item11);
+				bst.retrieve(26).should.equal(item26);
+				bst.retrieve(5).should.equal(item5);
+				bst.retrieve(30).should.equal(item30);
+
+			});
+
+
+			it('should return null when the key does not exist', function() {
+
+				expect(bst.retrieve(222)).to.be.null;
+
+			});
+
+
+		});
+
+
+	});
+
+
 	describe('delete()', function () {
 		
 
@@ -357,7 +461,7 @@ describe.only('adt-binary-search-tree', function () {
 			
 			
 			beforeEach(function () {
-				var data = [8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15];
+				var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
 
 				for (var i = 0; i < data.length; i++) {
 					bst.insert(data[i]);
@@ -367,7 +471,21 @@ describe.only('adt-binary-search-tree', function () {
 
 			it('should remove the item from the tree', function() {
 
+				bst.retrieve(24).should.equal(24);
+				bst.delete(24);
+				expect(bst.retrieve(24)).to.be.null;
+				bst.retrieve(12).should.equal(12);
+				bst.delete(12);
+				expect(bst.retrieve(12)).to.be.null;
+				bst.retrieve(8).should.equal(8);
+				bst.delete(8);
+				expect(bst.retrieve(8)).to.be.null;
+				bst.retrieve(10).should.equal(10);
 				bst.delete(10);
+				expect(bst.retrieve(10)).to.be.null;
+				bst.retrieve(16).should.equal(16);
+				bst.delete(16);
+				expect(bst.retrieve(16)).to.be.null;
 
 			});
 
@@ -376,48 +494,6 @@ describe.only('adt-binary-search-tree', function () {
 
 
 			it('should throw an error when the item is not at the root');
-
-
-		});
-
-
-	});
-
-
-	describe('retrieve()', function () {
-		
-
-		describe('when the tree is empty', function () {
-
-
-			it('should throw an error');
-
-			
-		});
-
-
-		describe('when tree has a single node', function () {
-
-
-			it('should return the item when the key is at the root');
-
-
-			it('should return null when the item is not at the root');
-
-					
-		});
-
-
-		describe('when the tree has many arbitrary nodes', function () {
-			
-
-			it('should return the item if the key exists');
-
-
-			it('should return null if the key does not exists');
-
-
-			it('should throw an error when the key does not exist');
 
 
 		});
