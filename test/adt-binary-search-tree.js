@@ -8,7 +8,7 @@ var adt = require('../index'),
 chai.should();
 
 
-describe.only('adt-binary-search-tree', function () {
+describe('adt-binary-search-tree', function () {
 
 
 	var bst;
@@ -405,9 +405,16 @@ describe.only('adt-binary-search-tree', function () {
 			});
 
 
-			it('should return null when the key does not exist', function() {
+			it('should return null when the key does not exist and is geater than any other key', function() {
 
 				expect(bst.retrieve(222)).to.be.null;
+
+			});
+
+
+			it('should return null when the key does not exist and is less than the greatest key value', function() {
+
+				expect(bst.retrieve(parseFloat('27.5'))).to.be.null;
 
 			});
 
@@ -520,89 +527,100 @@ describe.only('adt-binary-search-tree', function () {
 	});
 
 
-	// describe('getRootItem()', function () {
+	describe('getRootItem()', function () {
 
 
-	// 	it('should return the item at the root of the tree', function() {
+		beforeEach(function () {
+			var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
 
-	// 		var rootItem = {root: 'item'};
-	// 		bst.insert(rootItem);
-
-	// 		bst.getRootItem().should.deep.equal(rootItem);
-
-	// 	});
+			for (var i = 0; i < data.length; i++) {
+				bst.insert(data[i]);
+			}
+		});
 
 
-	// 	it('should throw an error if the tree is empty', function() {
+		it('should return the item at the root of the tree', function() {
 
-	// 		(function() {
-	// 			bst.getRootItem();
-	// 		}).should.throw(Error);
+			bst.getRootItem().should.equal(16);
 
-	// 	});
+		});
+
+
+		it('should throw an error if the tree is empty', function() {
+
+			// make sure the tree is empty
+			var emptyTree = adt.createBinarySearchTree();
+
+			(function() {
+				emptyTree.getRootItem();
+			}).should.throw(Error);
+
+		});
 
 		
-	// });
+	});
 
 
-	// describe('getLeftTree()', function () {
+	describe('getLeftTree()', function () {
 
 
-	// 	it('should return the left sub tree', function() {
+		it('should return the left sub tree', function() {
 
-	// 		var rootItem = {root: 'item'};
-	// 		bt.setRootItem(rootItem);
+			var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
 
-	// 		var rootItemLeft = {left: 'left'},
-	// 			btLeft = new adt.createBinaryTree(rootItemLeft);
-			
-	// 		bt.attachLeft(btLeft);
+			for (var i = 0; i < data.length; i++) {
+				bst.insert(data[i]);
+			}
 
-	// 		bt.getLeftTree().getRootItem().should.deep.equal(rootItemLeft);
+			bst.getLeftTree().getRootItem().should.equal(8);
+			bst.getLeftTree().getLeftTree().getRootItem().should.equal(4);
+			bst.getLeftTree().getLeftTree().getLeftTree().getRootItem().should.equal(2);
+			bst.getLeftTree().getLeftTree().getLeftTree().getLeftTree().getRootItem().should.equal(1);
 
-	// 	});
-
-
-	// 	it('should throw an error if the tree is empty', function() {
-
-	// 		(function() {
-	// 			bt.getLeftTree();
-	// 		}).should.throw(Error);
-
-	// 	});
+		});
 
 
-	// });
+		it('should throw an error if the tree is empty', function() {
+
+			(function() {
+				bst.getLeftTree();
+			}).should.throw(Error);
+
+		});
 
 
-	// describe('getRightTree()', function () {
+	});
 
 
-	// 	it('should return the right sub tree', function() {
-
-	// 		var rootItem = {root: 'item'};
-	// 		bt.setRootItem(rootItem);
-
-	// 		var rootItemRight = {right: 'left'},
-	// 			btRight = new adt.createBinaryTree(rootItemRight);
-			
-	// 		bt.attachRight(btRight);
-
-	// 		bt.getRightTree().getRootItem().should.deep.equal(rootItemRight);
-
-	// 	});
+	describe('getRightTree()', function () {
 
 
-	// 	it('should throw an error if the tree is empty', function() {
+		it('should return the right sub tree', function() {
 
-	// 		(function() {
-	// 			bt.getRightTree();
-	// 		}).should.throw(Error);
+			var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
 
-	// 	});
+			for (var i = 0; i < data.length; i++) {
+				bst.insert(data[i]);
+			}
+
+			bst.getRightTree().getRootItem().should.equal(24);
+			bst.getRightTree().getRightTree().getRootItem().should.equal(28);
+			bst.getRightTree().getRightTree().getRightTree().getRootItem().should.equal(30);
+			bst.getRightTree().getRightTree().getRightTree().getRightTree().getRootItem().should.equal(31);
+
+		});
 
 
-	// });
+		it('should throw an error if the tree is empty', function() {
+
+			(function() {
+				bst.getRightTree();
+			}).should.throw(Error);
+
+		});
+
+
+	});
 
 
 	describe('utils', function () {
@@ -620,7 +638,11 @@ describe.only('adt-binary-search-tree', function () {
 			});
 
 
-			it('should return true when the tree is valid');
+			it('should return true when the tree is valid', function() {
+
+				utils.isValid(bst).should.be.true;
+
+			});
 
 
 			it('should return false when the tree is not valid', function () {
@@ -628,7 +650,7 @@ describe.only('adt-binary-search-tree', function () {
 				// invalidate the tree
 				bst.getRightTree().getLeftTree()._root.setItem(222);
 				
-				utils.isValid().should.be.true;
+				utils.isValid(bst).should.be.false;
 
 			});
 

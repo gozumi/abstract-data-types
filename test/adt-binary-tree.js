@@ -25,7 +25,7 @@ describe('adt-binary-tree', function () {
 
 	it('should instantiate a one node tree', function() {
 
-		var item = {item: 1};
+		var item = {item: 1},
 			btWithItem = adt.createBinaryTree(item);
 
 		btWithItem.getRootItem().should.deep.equal(item);
