@@ -1,6 +1,6 @@
 {
   "name": "abstract-data-types",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "This module aims to provide a full suite of abstract data types. At present it provides the abstract data type Queue.",
   "keywords": [
     "abstract",
@@ -9,14 +9,17 @@
     "queue",
     "adt",
     "abstract data type",
+    "abstract-data-type",
     "link list",
     "linked",
     "list",
     "stack",
     "binary tree",
+    "binary-tree",
     "binary",
     "tree",
-    "binary, search tree",
+    "binary search tree",
+    "binary-search-tree",
     "search tree",
     "search"
   ],
