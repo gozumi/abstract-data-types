@@ -1,6 +1,6 @@
 {
   "name": "abstract-data-types",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "This module aims to provide a full suite of abstract data types. At present it provides the abstract data type Queue.",
   "keywords": [
     "abstract",
@@ -17,6 +17,7 @@
     "binary",
     "tree",
     "binary, search tree",
+    "search tree",
     "search"
   ],
   "homepage": "https://github.com/gozumi/abstract-data-types",
