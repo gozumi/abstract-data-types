@@ -208,10 +208,11 @@ The _Binary Tree_ in this module implements the standard methods of the Binary T
 - __setRootItem__   updates the item at the root of the tree
 - __getLeftTree__   returns the left sub tree
 - __getRightTree__  returns the Right sub tree
--__attachLeft__     attaches at tree or an item as the left sub tree
--__attachRight__    attaches at tree or an item as the right sub tree
--__detachLeft__     removes the left sub tree
--__detachRight__    removes the right sub tree
+- __attachLeft__    attaches at tree or an item as the left sub tree
+- __attachRight__   attaches at tree or an item as the right sub tree
+- __detachLeft__    removes the left sub tree
+- __detachRight__   removes the right sub tree
+- __count__         returns the number of nodes in the tree
 
 
 #### Creation
@@ -334,6 +335,12 @@ If this method is called on an empty tree it throws an error as follows.
 	throw new Error('adt-binary-tree.detachRight(): Attempt to detach the right sub tree of an empty tree');	
 
 
+#### Count
+
+This method returns the number of nodes in the tree.
+
+	bt.count();
+
 
 Binary Search Tree
 ------------------
@@ -347,6 +354,7 @@ The _Binary Search Tree_ implements the following Binary Search Tree methods.
 - __getRootItem__   returns the item at the root of the tree
 - __getLeftTree__   returns the left sub tree
 - __getRightTree__  returns the Right sub tree
+- __count__         returns the number of nodes in the tree
 
 
 
@@ -442,6 +450,14 @@ This method returns the right sub tree.
 If this method is called on an empty tree it throws an error as follows.
 
 	throw new Error('adt-binary-search-tree.getLeftTree(): Tried to get the left tree of an empty tree');
+
+
+#### Count
+
+This method returns the number of nodes in the tree.
+
+	bst.count();
+
 
 
 	
