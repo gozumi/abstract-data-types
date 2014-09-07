@@ -9,7 +9,7 @@ The future of this module is that it will be able to return instances of the fol
 - __Linked List__ _This is currently implemented_
 - __Stack__ _This is currently implemented_
 - __Binary Tree__ _This is currently implemented_
-- __Binary Search Tree__
+- __Binary Search Tree__ _This is currently implemented_
 - __Graph__
 - __Hash Table__
 - __Heap__
