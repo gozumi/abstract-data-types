@@ -335,4 +335,113 @@ If this method is called on an empty tree it throws an error as follows.
 
 
 
+Binary Search Tree
+------------------
 
+The _Binary Search Tree_ implements the following Binary Search Tree methods.
+
+- __insert__        inserts a new item into the search tree in the correct position, maintaining the validity of the binary search tree
+- __delete__        removes an item from the tree maintaining the validity of the binary search tree
+- __retrieve__      returns a specific item in the tree
+- __isEmpty__       determines whether the tree is empty and returns true if it is and false otherwise
+- __getRootItem__   returns the item at the root of the tree
+- __getLeftTree__   returns the left sub tree
+- __getRightTree__  returns the Right sub tree
+
+
+
+#### Insert
+
+This method inserts an item into the tree and makes sure that the validity of the binary seach tree is maintained.
+
+	bst.insert(item);
+
+The search key used to determine the position of an item within the binary search tree as it is being inserted is derived from the item in the following way.
+
+1. If the item is null, the item is not inserted into the tree and the following error is thrown.
+
+	throw new Error('adt-binary-search-tree utils.getKey(): item is null');
+
+2. If the item is an object that does not have a property named 'key', the item is not inserted into the tree and the following error is thrown.
+
+	throw new Error('adt-binary-search-tree utils.getKey(): item has no key');
+
+3. If the item is an object with a property named 'key' and that key property is null, the item is not inserted into the tree and the following error is thrown
+
+	throw new Error('adt-binary-search-tree utils.getKey(): item is null');
+
+4. If the item is an object with a property named 'key' and that key property is an object, the item is not inserted into the tree and the following error is thrown
+
+	throw new Error('adt-binary-search-tree utils.getKey(): item.key is an object');
+
+5. If the item is an object with a property named 'key' and this key property is not an object and is not null, the value of this key property is used as the item's search key within the tree.
+
+6. If the item is not an object and is not null, the item value is used as the item's search key within the tree.
+
+
+
+#### Delete
+
+This method removes the item identified by the parameter 'key' from the tree and makes sure that the validity of the binary seach tree is maintained.
+
+	bst.delete(key);
+
+If the key does not exist in the tree, the following error is thrown.
+
+	throw new Error('adt-binary-search-tree.delete(): The key is not in the tree');
+
+
+
+#### Retrieve
+
+This method returns the item identified by the parameter 'key' from the tree and leaves the tree unchanged.
+
+	bst.retieve(key);
+
+The method returns _null_ if the key does not exist in the tree.
+ 
+
+
+#### Is Empty
+
+The _isEmpty_ method is a boolean function that, when called on a tree, returns _true_ if the tree is empty and false otherwise.
+
+	bst.isEmpty();
+
+
+#### Get Root Item
+
+This method returns the item at the root of the tree and is called as follows.
+
+	bst.getRootItem();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-search-tree.getRootItem(): Tried to get the root item of an empty tree');
+
+
+
+#### Get Left Tree
+
+This method returns the left sub tree.
+
+	bst.getLeftTree();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-search-tree.getLeftTree(): Tried to get the left tree of an empty tree');
+
+
+	
+#### Get Right Tree
+
+This method returns the right sub tree.
+
+	bts.getRightTree();
+
+If this method is called on an empty tree it throws an error as follows.
+
+	throw new Error('adt-binary-search-tree.getLeftTree(): Tried to get the left tree of an empty tree');
+
+
+	
