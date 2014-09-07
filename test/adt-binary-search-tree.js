@@ -659,4 +659,24 @@ describe('adt-binary-search-tree', function () {
 		
 	});
 
+
+	describe('count()', function () {
+		
+
+		it('should return the number of nodes in the tree', function() {
+
+			var data = [16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
+
+			for (var i = 0; i < data.length; i++) {
+				bst.insert(data[i]);
+			}
+
+			bst.count().should.equal(data.length);
+
+		});
+
+		
+	});
+
+
 });

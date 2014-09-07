@@ -422,5 +422,21 @@ describe('adt-binary-tree', function () {
 
 	});
 
+	describe('count()', function () {
+		
+
+		it('should return the number of nodes in the tree', function() {
+
+			bt = adt.createBinaryTree(1);
+			bt.attachLeft(adt.createBinaryTree(2));
+			bt.attachRight(adt.createBinaryTree(3));
+
+			bt.count().should.equal(3);
+
+		});
+
+
+	});
+
 
 });
