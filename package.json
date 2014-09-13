@@ -1,6 +1,6 @@
 {
   "name": "abstract-data-types",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "This module aims to provide a full suite of abstract data types. At present it provides the abstract data type, Queue, Linked List, Stack, Binary Tree an Binary Search Tree.",
   "keywords": [
     "abstract",

@@ -43,17 +43,15 @@ exports.createBinarySearchTree = function() {
 
 	var BinarySearchTree = require('./lib/adt-binary-search-tree');
 
-	if (arguments.length > 0) {
-		return new BinarySearchTree(arguments[0]);
-	} else {
-		return new BinarySearchTree();
-	}
+	return new BinarySearchTree();
 
 };
 
 exports.createGraph = function() {
 
-	// TODO: This functionality has yet to be implemented
+	var Graph = require('./lib/adt-graph');
+
+	return new Graph();
 
 };
 
